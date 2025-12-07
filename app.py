@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score
 @st.cache_resource
 def train_model():
     # Load dataset
-    heart_data = pd.read_csv(r"F:\heartdiseaeprediction\heart_disease_data.csv")
+    heart_data = pd.read_csv("heart_disease_data.csv")
 
     X = heart_data.drop(columns="target", axis=1)
     y = heart_data["target"]
@@ -69,3 +69,4 @@ if st.button("Predict"):
         st.error("⚠️ The person is likely to have heart disease.")
     else:
         st.success("✅ The person is unlikely to have heart disease.")
+
